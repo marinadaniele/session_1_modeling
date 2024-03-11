@@ -96,3 +96,38 @@ for point in points:
 
 print(points) # this gives you the ID of the object in memory, doesn't work for obtaining numbers
 # it iterates and calls point.repr for each point in the list.
+
+
+#############################################################################################
+
+# add 5 random points into a list
+
+import random
+points = []
+for i in range(5):
+    x = random.randint(0, 10)
+    y = random.randint(0, 10)
+    points.append(Point(x, y))
+
+for point in points:
+    print(point.x, point.y)
+
+# professor's solution
+
+for _ in range(5):
+    points.append(Point(random.randint(0, 100), random.randint(0, 100)))
+
+for point in points:
+    print(point)
+
+print(points)
+a = Point(3, 4) #we expect 5 as distance to origin
+b = Point(12, 5) #we expect 13 as distance to origin
+c = Point(5, 12) #we expect 5 as distance to origin
+
+print(a.distance_origin(), b.distance_origin())
+print(a < b)
+print(b < a)
+print(b == c)
+points.sort()
+print(f"the biggest point is {points[-1]} and the smallest point is: {points[0]}")
